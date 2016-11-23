@@ -75,20 +75,13 @@ function getRandomQuote() {
   return splicedQuote
 }
 
-// Generate a random color
-function randomColorGenerator() {
-  // Initialize variable
-  var randomColor;
+function randomRGB() {
+  
+  var red = Math.floor( Math.random() * 256 );
+  var blue = Math.floor( Math.random() * 256 );
+  var green = Math.floor( Math.random() * 256 ); 
 
-  red = Math.floor( Math.random() * 256 );
-  blue = Math.floor( Math.random() * 256 );
-  green = Math.floor( Math.random() * 256 );
-
-  // Inject RGB value to variable
-  randomColor = 'rgb(' + red + ',' + green + ',' + blue + ')';
-
-  // Return RGB vaue generated
-  return randomColor;
+  return 'rgb(' + red + ',' + green + ',' + blue + ')';
 
 }
 
@@ -121,11 +114,8 @@ function printQuote() {
 
   print( message );
 
-  // Generate random color
-  randomColorGenerator();
-
   // Update body background color
-  document.getElementById('bgcolor').style.backgroundColor = randomColorGenerator();
+  document.getElementById('bgcolor').style.backgroundColor = randomRGB();
 
 };
 
